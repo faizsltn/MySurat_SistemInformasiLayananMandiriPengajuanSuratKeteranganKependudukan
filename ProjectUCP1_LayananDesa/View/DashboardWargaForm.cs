@@ -26,14 +26,14 @@ namespace ProjectUCP1_LayananDesa
             // Mengirim NIK asli ke form pengajuan supaya tidak error Foreign Key
             PengajuanSuratForm ps = new PengajuanSuratForm(nikUser);
             ps.Show();
-        }//
+        }
 
         private void btnStatus_Click(object sender, EventArgs e)
         {
             // UPDATE: Kirim NIK juga ke form status supaya dia tau surat siapa yang mau dicek
             TrackingStatusForm ts = new TrackingStatusForm(nikUser);
             ts.Show();
-        }
+        }//
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
