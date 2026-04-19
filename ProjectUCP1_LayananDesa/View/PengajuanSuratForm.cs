@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using ProjectUCP1_LayananDesa.Controller;//
+using ProjectUCP1_LayananDesa.Controller;
 
 namespace ProjectUCP1_LayananDesa.View
 {
@@ -14,7 +14,7 @@ namespace ProjectUCP1_LayananDesa.View
         {
             InitializeComponent();
             nikPengaju = nik;
-        }
+        }//
 
         private void btnKirim_Click(object sender, EventArgs e)
         {
