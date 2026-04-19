@@ -19,14 +19,14 @@ namespace ProjectUCP1_LayananDesa
 
             // 2. Tampilkan NAMA di label (biar lebih ramah di layar)
             lblNamaWarga.Text = "Selamat Datang, " + nama;
-        }//
+        }
 
         private void btnPengajuan_Click(object sender, EventArgs e)
         {
             // Mengirim NIK asli ke form pengajuan supaya tidak error Foreign Key
             PengajuanSuratForm ps = new PengajuanSuratForm(nikUser);
             ps.Show();
-        }
+        }//
 
         private void btnStatus_Click(object sender, EventArgs e)
         {
