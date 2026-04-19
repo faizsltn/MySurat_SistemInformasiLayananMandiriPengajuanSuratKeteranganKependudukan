@@ -19,7 +19,7 @@ namespace ProjectUCP1_LayananDesa
 
             // 2. Tampilkan NAMA di label (biar lebih ramah di layar)
             lblNamaWarga.Text = "Selamat Datang, " + nama;
-        }
+        }//
 
         private void btnPengajuan_Click(object sender, EventArgs e)
         {
