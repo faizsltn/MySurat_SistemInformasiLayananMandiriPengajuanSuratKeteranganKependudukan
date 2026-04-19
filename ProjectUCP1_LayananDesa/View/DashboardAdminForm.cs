@@ -27,7 +27,7 @@ namespace ProjectUCP1_LayananDesa
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
 
-                    dgvSuratMasuk.DataSource = dt;//
+                    dgvSuratMasuk.DataSource = dt;
 
                     // --- SETTING AGAR TAMPILAN FULL & TIDAK KEPOTONG ---
                     dgvSuratMasuk.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Kolom melebar otomatis
@@ -40,7 +40,7 @@ namespace ProjectUCP1_LayananDesa
                     MessageBox.Show("Gagal muat data: " + ex.Message);
                 }
             }
-        }
+        }//
 
         private void DashboardAdminForm_Load(object sender, EventArgs e) { TampilData(); }
         private void btnRefresh_Click(object sender, EventArgs e) { TampilData(); }
