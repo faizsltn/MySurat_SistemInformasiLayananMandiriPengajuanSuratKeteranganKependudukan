@@ -16,7 +16,7 @@ namespace ProjectUCP1_LayananDesa
             InitializeComponent();
             nikWarga = nik;
         }
-        //
+        
         private void TampilStatus()
         {
             Koneksi kon = new Koneksi();
@@ -55,4 +55,4 @@ namespace ProjectUCP1_LayananDesa
             TampilStatus();
         }
     }
-}
+}//
