@@ -12,7 +12,7 @@ namespace ProjectUCP1_LayananDesa
         {
             InitializeComponent();
         }
-        //
+        
 
         private void btnDaftar_Click(object sender, EventArgs e)
         {
@@ -55,6 +55,7 @@ namespace ProjectUCP1_LayananDesa
                 }
             }
         }
+        //
 
         private void btnBatal_Click(object sender, EventArgs e)
         {
