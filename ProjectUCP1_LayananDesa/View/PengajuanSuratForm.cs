@@ -23,7 +23,7 @@ namespace ProjectUCP1_LayananDesa.View
             {
                 MessageBox.Show("Jenis surat dan alasan tidak boleh kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }//
+            }
 
             Koneksi kon = new Koneksi();
             using (SqlConnection conn = kon.GetKoneksi())
@@ -55,4 +55,4 @@ namespace ProjectUCP1_LayananDesa.View
 
         }
     }
-}
+}//
