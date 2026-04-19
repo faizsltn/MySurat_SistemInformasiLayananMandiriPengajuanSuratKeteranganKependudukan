@@ -14,7 +14,7 @@ namespace ProjectUCP1_LayananDesa.View
         {
             InitializeComponent();
             nikPengaju = nik;
-        }//
+        }
 
         private void btnKirim_Click(object sender, EventArgs e)
         {
@@ -23,7 +23,7 @@ namespace ProjectUCP1_LayananDesa.View
             {
                 MessageBox.Show("Jenis surat dan alasan tidak boleh kosong!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
+            }//
 
             Koneksi kon = new Koneksi();
             using (SqlConnection conn = kon.GetKoneksi())
