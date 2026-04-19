@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using ProjectUCP1_LayananDesa.Controller;
+using ProjectUCP1_LayananDesa.Controller;//
 
 namespace ProjectUCP1_LayananDesa
 {
