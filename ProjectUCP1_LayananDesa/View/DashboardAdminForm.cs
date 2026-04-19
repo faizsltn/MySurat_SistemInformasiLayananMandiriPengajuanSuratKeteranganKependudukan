@@ -12,7 +12,7 @@ namespace ProjectUCP1_LayananDesa
         public DashboardAdminForm()
         {
             InitializeComponent();
-        }
+        }//
 
         private void TampilData()
         {
