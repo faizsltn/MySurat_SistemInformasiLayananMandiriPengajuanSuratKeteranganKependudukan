@@ -33,7 +33,7 @@ namespace ProjectUCP1_LayananDesa
             // UPDATE: Kirim NIK juga ke form status supaya dia tau surat siapa yang mau dicek
             TrackingStatusForm ts = new TrackingStatusForm(nikUser);
             ts.Show();
-        }//
+        }
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
@@ -46,4 +46,4 @@ namespace ProjectUCP1_LayananDesa
             }
         }
     }
-}
+}//
