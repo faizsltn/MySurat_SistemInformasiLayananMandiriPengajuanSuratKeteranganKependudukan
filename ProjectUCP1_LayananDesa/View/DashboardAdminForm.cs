@@ -72,7 +72,7 @@ namespace ProjectUCP1_LayananDesa
                         MessageBox.Show("Surat berhasil " + statusBaru + "!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         TampilData(); // Refresh tabel biar status langsung berubah
                     }
-                }//
+                }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Gagal update status: " + ex.Message);
@@ -90,4 +90,4 @@ namespace ProjectUCP1_LayananDesa
             this.Close();
         }
     }
-}
+}//
