@@ -40,7 +40,7 @@ namespace ProjectUCP1_LayananDesa
                     MessageBox.Show("Gagal muat data: " + ex.Message);
                 }
             }
-        }//
+        }
 
         private void DashboardAdminForm_Load(object sender, EventArgs e) { TampilData(); }
         private void btnRefresh_Click(object sender, EventArgs e) { TampilData(); }
