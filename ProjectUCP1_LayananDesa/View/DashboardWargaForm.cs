@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using ProjectUCP1_LayananDesa.View;
+using ProjectUCP1_LayananDesa.View;//
 
 namespace ProjectUCP1_LayananDesa
 {
