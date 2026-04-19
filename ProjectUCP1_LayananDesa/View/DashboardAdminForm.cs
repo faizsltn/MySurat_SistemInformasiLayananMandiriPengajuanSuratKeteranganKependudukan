@@ -12,7 +12,7 @@ namespace ProjectUCP1_LayananDesa
         public DashboardAdminForm()
         {
             InitializeComponent();
-        }//
+        }
 
         private void TampilData()
         {
@@ -27,7 +27,7 @@ namespace ProjectUCP1_LayananDesa
                     DataTable dt = new DataTable();
                     sda.Fill(dt);
 
-                    dgvSuratMasuk.DataSource = dt;
+                    dgvSuratMasuk.DataSource = dt;//
 
                     // --- SETTING AGAR TAMPILAN FULL & TIDAK KEPOTONG ---
                     dgvSuratMasuk.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // Kolom melebar otomatis
