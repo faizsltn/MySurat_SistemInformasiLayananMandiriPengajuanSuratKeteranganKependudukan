@@ -123,3 +123,10 @@ namespace ProjectUCP1_LayananDesa
                 }
             }
         }
+
+        // --- Event Handlers Tombol Visual ---
+
+        private void btnSetujui_Click(object sender, EventArgs e)
+        {
+            UpdateStatusSuratViaSP("Disetujui");
+        }
