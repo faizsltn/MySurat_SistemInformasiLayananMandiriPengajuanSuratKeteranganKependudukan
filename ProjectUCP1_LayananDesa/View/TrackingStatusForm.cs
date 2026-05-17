@@ -6,3 +6,10 @@ namespace ProjectUCP1_LayananDesa
     public partial class TrackingStatusForm : Form
     {
         private string nikWarga;
+
+        // Constructor menerima NIK dari Dashboard Warga
+        public TrackingStatusForm(string nik)
+        {
+            InitializeComponent();
+            nikWarga = nik;
+        }
