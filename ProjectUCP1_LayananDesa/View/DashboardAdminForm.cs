@@ -5,3 +5,7 @@ using System.Data;
 using System.Windows.Forms;
 namespace ProjectUCP1_LayananDesa
 {
+    public partial class DashboardAdminForm : Form
+    {
+        // Variabel penampung identitas admin yang login
+        private string idAdminAktif;
