@@ -30,3 +30,9 @@ namespace ProjectUCP1_LayananDesa
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
             this.btnHapus.Click += new System.EventHandler(this.btnHapus_Click);
         }
+
+        // 1. EVENT LOAD FORM UTAMA (Sesuai Standar Automasi Modul 8)
+        private void DashboardAdminForm_Load(object sender, EventArgs e)
+        {
+            TampilDataOtomatis();
+        }
