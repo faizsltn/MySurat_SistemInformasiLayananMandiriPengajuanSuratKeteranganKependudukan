@@ -14,3 +14,13 @@ namespace ProjectUCP1_LayananDesa
         }
         
 
+        private void btnDaftar_Click(object sender, EventArgs e)
+        {
+            // Validasi agar tidak ada data yang kosong
+            if (string.IsNullOrWhiteSpace(txtNIK.Text) || string.IsNullOrWhiteSpace(txtNama.Text) ||
+                string.IsNullOrWhiteSpace(txtPassword.Text) || string.IsNullOrWhiteSpace(txtNoHP.Text))
+            {
+                MessageBox.Show("Mohon lengkapi semua data!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
