@@ -40,7 +40,7 @@ namespace ProjectUCP1_LayananDesa.View
                             string nikAsli = reader["nik"].ToString();
                             string namaAsli = reader["nama"].ToString();
 
-                            MessageBox.Show("Login Warga Berhasil! (Celah SQL Injection Terbuka)", "Security Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            MessageBox.Show("Login Warga Berhasil!", "Security Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
                             DashboardWargaForm dw = new DashboardWargaForm(nikAsli, namaAsli);
                             dw.Show();

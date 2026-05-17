@@ -14,6 +14,8 @@ namespace ProjectUCP1_LayananDesa.View
         {
             InitializeComponent();
             nikPengaju = nik;
+
+            cbJenisSurat.Enabled = true;
         }
 
         private void btnKirim_Click(object sender, EventArgs e)
