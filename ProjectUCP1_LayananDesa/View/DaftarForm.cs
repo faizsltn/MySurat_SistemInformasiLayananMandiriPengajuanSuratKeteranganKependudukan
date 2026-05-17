@@ -4,3 +4,13 @@ using System;
 using System.Data.SqlClient;
 using System.Windows.Forms; 
 
+namespace ProjectUCP1_LayananDesa
+{
+    public partial class DaftarForm : Form
+    {
+        public DaftarForm()
+        {
+            InitializeComponent();
+        }
+        
+
