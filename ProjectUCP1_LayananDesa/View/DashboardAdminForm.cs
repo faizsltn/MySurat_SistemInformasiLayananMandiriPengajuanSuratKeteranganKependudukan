@@ -89,3 +89,37 @@ namespace ProjectUCP1_LayananDesa
                 MessageBox.Show("Gagal mengeksekusi Stored Procedure via TableAdapter: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // 4. FITUR: HAPUS DATA CUSTOM VIA DATA BINDING (Sangat Lancar)
+        private void btnHapus_Click(object sender, EventArgs e)
+        {
+            if (sURATBindingSource.Current == null)
+            {
+                MessageBox.Show("Pilih data yang ingin dihapus pada tabel!", "Peringatan", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            // Konfirmasi sebelum menghapus secara permanen
+            DialogResult dr = MessageBox.Show("Apakah Anda yakin ingin menghapus data pengajuan ini secara permanen?",
+                "Konfirmasi Hapus", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (dr == DialogResult.Yes)
+            {
+                try
+                {
+                    // Menghapus baris aktif dari memori lokal melalui koordinator binding
+                    sURATBindingSource.RemoveCurrent();
+                    sURATBindingSource.EndEdit();
+
+                    // Sinkronisasikan perintah hapus massal tersebut ke database SQL Server
+                    this.sURATTableAdapter.Update(this.layananDesa_DBDataSet.SURAT);
+
+                    MessageBox.Show("Data berhasil dihapus dari sistem!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Gagal menghapus data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    TampilDataOtomatis();
+                }
+            }
+        }
