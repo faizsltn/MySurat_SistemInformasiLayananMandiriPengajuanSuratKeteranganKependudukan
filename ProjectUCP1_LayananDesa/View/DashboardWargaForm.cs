@@ -34,3 +34,16 @@ namespace ProjectUCP1_LayananDesa
             TrackingStatusForm ts = new TrackingStatusForm(nikUser);
             ts.Show();
         }
+
+        private void btnLogout_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Apakah anda yakin ingin Logout?", "Konfirmasi", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                LoginForm log = new LoginForm();
+                log.Show();
+                this.Close();
+            }
+        }
+    }
+}//
