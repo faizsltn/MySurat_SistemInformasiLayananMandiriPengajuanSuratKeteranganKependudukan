@@ -130,3 +130,9 @@ namespace ProjectUCP1_LayananDesa
         {
             UpdateStatusSuratViaSP("Disetujui");
         }
+
+        private void btnTolak_Click(object sender, EventArgs e)
+        {
+            UpdateStatusSuratViaSP("Ditolak");
+        }
+
