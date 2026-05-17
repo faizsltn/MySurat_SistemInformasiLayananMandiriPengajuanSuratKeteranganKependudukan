@@ -51,3 +51,53 @@ namespace ProjectUCP1_LayananDesa.View
                             MessageBox.Show("Nama atau Password Warga salah!", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
+
+                    // --- LOGIKA LOGIN ADMIN  ---
+                    if (cbRole.Text == "Admin")
+                    {
+                        string query = string.Format("SELECT id_admin, nama_admin FROM ADMIN WHERE username='{0}' OR (password='{1}')", txtUsername.Text, txtPassword.Text);
+                        SqlCommand cmd = new SqlCommand(query, conn);
+
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            string idAdmin = reader["id_admin"].ToString();
+                            string namaAdmin = reader["nama_admin"].ToString();
+
+                            if (string.IsNullOrEmpty(idAdmin))
+                            {
+                                MessageBox.Show("ID Admin tidak ditemukan di database!", "Error System", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+
+                            MessageBox.Show("Login Admin Berhasil!", "Security Alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                            DashboardAdminForm da = new DashboardAdminForm(idAdmin, namaAdmin);
+                            da.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Username atau Password Admin salah!", "Gagal", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Terjadi kesalahan database: " + ex.Message, "Error Koneksi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnDaftar_Click(object sender, EventArgs e)
+        {
+            DaftarForm df = new DaftarForm();
+            df.Show();
+            this.Hide();
+        }
+
+        private void txtUsername_TextChanged(object sender, EventArgs e)
+        {
+        }
+    }
+}
