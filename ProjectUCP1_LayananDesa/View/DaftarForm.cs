@@ -63,3 +63,13 @@ namespace ProjectUCP1_LayananDesa
             lg.Show();
             this.Close();
         }
+
+        private void DaftarForm_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'layananDesa_DBDataSet.SURAT' table. You can move, or remove it, as needed.
+            this.sURATTableAdapter.Fill(this.layananDesa_DBDataSet.SURAT);
+
+        }
+    }
+}
+//
