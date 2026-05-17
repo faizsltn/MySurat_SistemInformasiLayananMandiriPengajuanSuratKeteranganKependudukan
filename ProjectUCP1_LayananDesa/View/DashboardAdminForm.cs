@@ -136,3 +136,8 @@ namespace ProjectUCP1_LayananDesa
             UpdateStatusSuratViaSP("Ditolak");
         }
 
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            TampilDataOtomatis();
+        }
+
