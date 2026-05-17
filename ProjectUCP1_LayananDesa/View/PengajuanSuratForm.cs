@@ -37,3 +37,12 @@ namespace ProjectUCP1_LayananDesa.View
                 MessageBox.Show("Jenis surat hanya boleh berisi huruf dan spasi (Tidak boleh angka/simbol)!", "Validasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
+
+            // Untuk deskripsi, kita beri kelonggaran boleh angka (0-9) dan titik (.) 
+            // karena biasanya orang menulis alasan pakai nomor atau singkatan
+            string polaDeskripsi = @"^[a-zA-Z0-9\s\.]+$";
+            if (!Regex.IsMatch(txtDeskripsi.Text, polaDeskripsi))
+            {
+                MessageBox.Show("Deskripsi tidak boleh mengandung simbol karakter khusus!", "Validasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Stop);
+                return;
+            }
