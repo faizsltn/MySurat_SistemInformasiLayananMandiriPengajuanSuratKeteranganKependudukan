@@ -56,3 +56,10 @@ namespace ProjectUCP1_LayananDesa
             }
         }
         //
+
+        private void btnBatal_Click(object sender, EventArgs e)
+        {
+            LoginForm lg = new LoginForm();
+            lg.Show();
+            this.Close();
+        }
