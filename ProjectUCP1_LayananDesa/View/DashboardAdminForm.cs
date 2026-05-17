@@ -54,3 +54,38 @@ namespace ProjectUCP1_LayananDesa
                 MessageBox.Show("Gagal memuat data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // 3. FUNGSI UTAMA: Update Status Menggunakan Stored Procedure Resmi dari TableAdapter
+        private void UpdateStatusSuratViaSP(string statusBaru)
+        {
+            // Validasi apakah ada data yang sedang ditunjuk oleh kursor navigator/tabel
+            if (sURATBindingSource.Current == null)
+            {
+                MessageBox.Show("Pilih pengajuan warga pada tabel terlebih dahulu.", "Informasi", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            try
+            {
+                // Ambil baris data (Row) yang sedang aktif ditunjuk saat ini
+                DataRowView rowView = (DataRowView)sURATBindingSource.Current;
+                DataRow row = rowView.Row;
+
+                // Ambil ID Pengajuan untuk dilempar sebagai parameter Stored Procedure
+                int idSurat = Convert.ToInt32(row["id_pengajuan"]);
+
+                // PANGGIL STORED PROCEDURE LEWAT JALUR AMAN TABLEADAPTER YANG BARU DIREGISTRASI
+                // Menjalankan sp_UpdateStatusSurat secara aman tanpa koneksi manual yang rawan macet
+                this.sURATTableAdapter.sp_UpdateStatusSurat(idSurat, statusBaru, idAdminAktif);
+
+                MessageBox.Show("Pengajuan berhasil di-" + statusBaru.ToLower() + "!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                // REFRESH DATASET: Perbarui memori RAM DataSet agar visual GridView ikut berubah
+                TampilDataOtomatis();
+                sURATBindingSource.ResetCurrentItem();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal mengeksekusi Stored Procedure via TableAdapter: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
