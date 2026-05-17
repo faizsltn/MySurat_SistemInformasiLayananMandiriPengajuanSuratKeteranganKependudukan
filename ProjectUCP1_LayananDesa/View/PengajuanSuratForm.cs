@@ -46,3 +46,28 @@ namespace ProjectUCP1_LayananDesa.View
                 MessageBox.Show("Deskripsi tidak boleh mengandung simbol karakter khusus!", "Validasi Gagal", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                 return;
             }
+
+            // 3. PROSES SIMPAN KE DATABASE
+            Koneksi kon = new Koneksi();
+            using (SqlConnection conn = kon.GetKoneksi())
+            {
+                try
+                {
+                    conn.Open();
+                    string query = "INSERT INTO SURAT (nik, jenis_surat, deskripsi, status) VALUES (@nik, @jenis, @alasan, 'Pending')";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@nik", nikPengaju);
+                    cmd.Parameters.AddWithValue("@jenis", cbJenisSurat.Text);
+                    cmd.Parameters.AddWithValue("@alasan", txtDeskripsi.Text);
+
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Pengajuan Berhasil Dikirim!", "Sukses", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Gagal mengirim pengajuan: " + ex.Message);
+                }
+            }
+        }
