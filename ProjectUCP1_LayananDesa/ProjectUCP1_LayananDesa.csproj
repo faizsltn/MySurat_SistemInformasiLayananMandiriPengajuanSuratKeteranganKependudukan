@@ -47,6 +47,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controller\Koneksi.cs" />
+    <Compile Include="LayananDesa_DBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LayananDesa_DBDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="View\DaftarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +124,17 @@
     <EmbeddedResource Include="View\TrackingStatusForm.resx">
       <DependentUpon>TrackingStatusForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="LayananDesa_DBDataSet.xsc">
+      <DependentUpon>LayananDesa_DBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LayananDesa_DBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LayananDesa_DBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LayananDesa_DBDataSet.xss">
+      <DependentUpon>LayananDesa_DBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

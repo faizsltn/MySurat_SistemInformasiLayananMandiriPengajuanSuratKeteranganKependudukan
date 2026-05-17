@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblJenisSurat = new System.Windows.Forms.Label();
             this.cbJenisSurat = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtDeskripsi = new System.Windows.Forms.TextBox();
             this.btnKirim = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.layananDesa_DBDataSet = new ProjectUCP1_LayananDesa.LayananDesa_DBDataSet();
+            this.sURATBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sURATTableAdapter = new ProjectUCP1_LayananDesa.LayananDesa_DBDataSetTableAdapters.SURATTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.layananDesa_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sURATBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblJenisSurat
@@ -47,6 +53,8 @@
             // 
             // cbJenisSurat
             // 
+            this.cbJenisSurat.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sURATBindingSource, "jenis_surat", true));
+            this.cbJenisSurat.Enabled = false;
             this.cbJenisSurat.FormattingEnabled = true;
             this.cbJenisSurat.Items.AddRange(new object[] {
             "Surat Keterangan Tidak Mampu",
@@ -70,6 +78,7 @@
             // 
             // txtDeskripsi
             // 
+            this.txtDeskripsi.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sURATBindingSource, "deskripsi", true));
             this.txtDeskripsi.Location = new System.Drawing.Point(229, 160);
             this.txtDeskripsi.Multiline = true;
             this.txtDeskripsi.Name = "txtDeskripsi";
@@ -78,9 +87,9 @@
             // 
             // btnKirim
             // 
-            this.btnKirim.Location = new System.Drawing.Point(229, 293);
+            this.btnKirim.Location = new System.Drawing.Point(368, 292);
             this.btnKirim.Name = "btnKirim";
-            this.btnKirim.Size = new System.Drawing.Size(75, 34);
+            this.btnKirim.Size = new System.Drawing.Size(100, 33);
             this.btnKirim.TabIndex = 4;
             this.btnKirim.Text = "Kirim";
             this.btnKirim.UseVisualStyleBackColor = true;
@@ -96,6 +105,20 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "Pengajuan Surat";
             // 
+            // layananDesa_DBDataSet
+            // 
+            this.layananDesa_DBDataSet.DataSetName = "LayananDesa_DBDataSet";
+            this.layananDesa_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sURATBindingSource
+            // 
+            this.sURATBindingSource.DataMember = "SURAT";
+            this.sURATBindingSource.DataSource = this.layananDesa_DBDataSet;
+            // 
+            // sURATTableAdapter
+            // 
+            this.sURATTableAdapter.ClearBeforeFill = true;
+            // 
             // PengajuanSuratForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -110,6 +133,9 @@
             this.Controls.Add(this.lblJenisSurat);
             this.Name = "PengajuanSuratForm";
             this.Text = "PengajuanSurat";
+            this.Load += new System.EventHandler(this.PengajuanSuratForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.layananDesa_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sURATBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -123,5 +149,8 @@
         private System.Windows.Forms.TextBox txtDeskripsi;
         private System.Windows.Forms.Button btnKirim;
         private System.Windows.Forms.Label label2;
+        private LayananDesa_DBDataSet layananDesa_DBDataSet;
+        private System.Windows.Forms.BindingSource sURATBindingSource;
+        private LayananDesa_DBDataSetTableAdapters.SURATTableAdapter sURATTableAdapter;
     }
 }

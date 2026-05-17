@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnDaftar = new System.Windows.Forms.Button();
             this.txtNIK = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,13 +42,18 @@
             this.txtAlamat = new System.Windows.Forms.TextBox();
             this.btnBatal = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
+            this.layananDesa_DBDataSet = new ProjectUCP1_LayananDesa.LayananDesa_DBDataSet();
+            this.sURATBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sURATTableAdapter = new ProjectUCP1_LayananDesa.LayananDesa_DBDataSetTableAdapters.SURATTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.layananDesa_DBDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sURATBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnDaftar
             // 
-            this.btnDaftar.Location = new System.Drawing.Point(218, 426);
+            this.btnDaftar.Location = new System.Drawing.Point(254, 430);
             this.btnDaftar.Name = "btnDaftar";
-            this.btnDaftar.Size = new System.Drawing.Size(75, 23);
+            this.btnDaftar.Size = new System.Drawing.Size(90, 39);
             this.btnDaftar.TabIndex = 0;
             this.btnDaftar.Text = "Daftar";
             this.btnDaftar.UseVisualStyleBackColor = true;
@@ -56,7 +62,8 @@
             // txtNIK
             // 
             this.txtNIK.BackColor = System.Drawing.SystemColors.Window;
-            this.txtNIK.Location = new System.Drawing.Point(218, 102);
+            this.txtNIK.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.sURATBindingSource, "nik", true));
+            this.txtNIK.Location = new System.Drawing.Point(254, 106);
             this.txtNIK.Name = "txtNIK";
             this.txtNIK.Size = new System.Drawing.Size(250, 22);
             this.txtNIK.TabIndex = 1;
@@ -64,7 +71,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(142, 105);
+            this.label1.Location = new System.Drawing.Point(178, 109);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(28, 16);
             this.label1.TabIndex = 2;
@@ -73,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(137, 154);
+            this.label2.Location = new System.Drawing.Point(173, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 16);
             this.label2.TabIndex = 4;
@@ -81,7 +88,7 @@
             // 
             // txtNama
             // 
-            this.txtNama.Location = new System.Drawing.Point(218, 151);
+            this.txtNama.Location = new System.Drawing.Point(254, 155);
             this.txtNama.Name = "txtNama";
             this.txtNama.Size = new System.Drawing.Size(250, 22);
             this.txtNama.TabIndex = 3;
@@ -89,7 +96,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(133, 206);
+            this.label3.Location = new System.Drawing.Point(169, 210);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 16);
             this.label3.TabIndex = 6;
@@ -97,7 +104,7 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(218, 203);
+            this.txtPassword.Location = new System.Drawing.Point(254, 207);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(250, 22);
             this.txtPassword.TabIndex = 5;
@@ -106,7 +113,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(133, 260);
+            this.label4.Location = new System.Drawing.Point(169, 264);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 16);
             this.label4.TabIndex = 8;
@@ -114,7 +121,7 @@
             // 
             // txtNoHP
             // 
-            this.txtNoHP.Location = new System.Drawing.Point(218, 257);
+            this.txtNoHP.Location = new System.Drawing.Point(254, 261);
             this.txtNoHP.Name = "txtNoHP";
             this.txtNoHP.Size = new System.Drawing.Size(250, 22);
             this.txtNoHP.TabIndex = 7;
@@ -122,7 +129,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(132, 311);
+            this.label5.Location = new System.Drawing.Point(168, 315);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 16);
             this.label5.TabIndex = 10;
@@ -130,7 +137,7 @@
             // 
             // txtAlamat
             // 
-            this.txtAlamat.Location = new System.Drawing.Point(218, 308);
+            this.txtAlamat.Location = new System.Drawing.Point(254, 312);
             this.txtAlamat.Multiline = true;
             this.txtAlamat.Name = "txtAlamat";
             this.txtAlamat.Size = new System.Drawing.Size(250, 77);
@@ -138,9 +145,9 @@
             // 
             // btnBatal
             // 
-            this.btnBatal.Location = new System.Drawing.Point(363, 426);
+            this.btnBatal.Location = new System.Drawing.Point(400, 430);
             this.btnBatal.Name = "btnBatal";
-            this.btnBatal.Size = new System.Drawing.Size(75, 23);
+            this.btnBatal.Size = new System.Drawing.Size(92, 39);
             this.btnBatal.TabIndex = 11;
             this.btnBatal.Text = "Batal";
             this.btnBatal.UseVisualStyleBackColor = true;
@@ -150,11 +157,25 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(239, 39);
+            this.label6.Location = new System.Drawing.Point(275, 43);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(217, 25);
             this.label6.TabIndex = 12;
             this.label6.Text = "Halaman Daftar Akun";
+            // 
+            // layananDesa_DBDataSet
+            // 
+            this.layananDesa_DBDataSet.DataSetName = "LayananDesa_DBDataSet";
+            this.layananDesa_DBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sURATBindingSource
+            // 
+            this.sURATBindingSource.DataMember = "SURAT";
+            this.sURATBindingSource.DataSource = this.layananDesa_DBDataSet;
+            // 
+            // sURATTableAdapter
+            // 
+            this.sURATTableAdapter.ClearBeforeFill = true;
             // 
             // DaftarForm
             // 
@@ -177,6 +198,9 @@
             this.Controls.Add(this.btnDaftar);
             this.Name = "DaftarForm";
             this.Text = "Daftar";
+            this.Load += new System.EventHandler(this.DaftarForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.layananDesa_DBDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sURATBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,5 +221,8 @@
         private System.Windows.Forms.TextBox txtAlamat;
         private System.Windows.Forms.Button btnBatal;
         private System.Windows.Forms.Label label6;
+        private LayananDesa_DBDataSet layananDesa_DBDataSet;
+        private System.Windows.Forms.BindingSource sURATBindingSource;
+        private LayananDesa_DBDataSetTableAdapters.SURATTableAdapter sURATTableAdapter;
     }
 }
