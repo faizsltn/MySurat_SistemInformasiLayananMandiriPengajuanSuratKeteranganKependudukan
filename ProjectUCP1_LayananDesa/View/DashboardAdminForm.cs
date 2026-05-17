@@ -36,3 +36,21 @@ namespace ProjectUCP1_LayananDesa
         {
             TampilDataOtomatis();
         }
+
+        // 2. FUNGSI UNTUK REFRESH / AMBIL DATA DISCONNECTED (TableAdapter)
+        private void TampilDataOtomatis()
+        {
+            try
+            {
+                // Mengambil data murni Disconnected ke memori DataSet lokal laptop
+                this.sURATTableAdapter.Fill(this.layananDesa_DBDataSet.SURAT);
+
+                // Pengaturan visual DataGridView agar rapi
+                dgvSuratMasuk.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+                dgvSuratMasuk.RowHeadersVisible = false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal memuat data: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
